@@ -62,6 +62,18 @@ return packer.startup(function(use)
   -- Tmux
   use {'christoomey/vim-tmux-navigator'}
   use {'tmux-plugins/vim-tmux-focus-events'}
+  -- vimwiki
+  use { 'vimwiki/vimwiki',
+    config = function()
+      vim.g.vimwiki_list = {
+        {path= '~/vimwiki/', syntax= 'markdown', ext= '.md'},
+        {path= '~/vimwiki_personal/', syntax= 'markdown', ext= '.md'}
+      }
+      vim.g.vimwiki_ext2syntax = {md= 'markdown', mkd= 'markdown', wiki = 'media'}
+      vim.g.vimwiki_folding=''
+      vim.g.vimwiki_listsyms = ' ○◐●✓'
+    end
+    }
 
   -- Colorschemes
   use { "folke/tokyonight.nvim", commit = "8223c970677e4d88c9b6b6d81bda23daf11062bb" }
