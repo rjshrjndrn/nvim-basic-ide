@@ -75,6 +75,11 @@ return packer.startup(function(use)
     end
     }
 
+  -- Fzf
+  use {'junegunn/fzf'} 
+  use {'junegunn/fzf.vim'}
+  use {'junegunn/vim-easy-align'}
+
   -- Colorschemes
   use { "folke/tokyonight.nvim", commit = "8223c970677e4d88c9b6b6d81bda23daf11062bb" }
   use { "lunarvim/darkplus.nvim", commit = "2584cdeefc078351a79073322eb7f14d7fbb1835" }
@@ -109,6 +114,10 @@ return packer.startup(function(use)
   -- Git
   use { "lewis6991/gitsigns.nvim", commit = "c18e016864c92ecf9775abea1baaa161c28082c3" }
   use { "tpope/vim-fugitive" }
+  use {'tpope/vim-rhubarb'}
+
+  -- Repeat actions
+  use {'tpope/vim-repeat'}
 
   -- Vim async jobs
   use { 'tpope/vim-dispatch' }
