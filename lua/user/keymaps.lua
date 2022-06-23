@@ -40,6 +40,7 @@ keymap("n", "<S-q>", "<cmd>Bdelete!<CR>", opts)
 
 -- close window
 keymap("n", "<leader>q", "<cmd>q<CR>", opts)
+keymap("n", "<leader>Q", "<cmd>qa<CR>", opts)
 
 -- Better paste
 keymap("v", "p", '"_dP', opts)
