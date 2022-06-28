@@ -37,6 +37,9 @@ packer.init {
     end,
   },
   git = {
+    subcommands = { -- Format strings for git subcommands
+      update         = 'pull --progress --rebase=true',
+    },
     clone_timeout = 300, -- Timeout, in seconds, for git clones
   },
 }
@@ -63,22 +66,15 @@ return packer.startup(function(use)
   use {'christoomey/vim-tmux-navigator'}
   use {'tmux-plugins/vim-tmux-focus-events'}
   -- vimwiki
-  use { 'vimwiki/vimwiki',
-    config = function()
-      vim.g.vimwiki_list = {
-        {path= '~/vimwiki/', syntax= 'markdown', ext= '.md'},
-        {path= '~/vimwiki_personal/', syntax= 'markdown', ext= '.md'}
-      }
-      vim.g.vimwiki_ext2syntax = {md= 'markdown', mkd= 'markdown', wiki = 'media'}
-      vim.g.vimwiki_folding=''
-      vim.g.vimwiki_listsyms = ' ○◐●✓'
-    end
-    }
+  use { 'vimwiki/vimwiki'}
 
   -- Fzf
   use {'junegunn/fzf'} 
   use {'junegunn/fzf.vim'}
   use {'junegunn/vim-easy-align'}
+
+  -- Helper
+  use {'folke/which-key.nvim'}
 
   -- Colorschemes
   use { "folke/tokyonight.nvim", commit = "8223c970677e4d88c9b6b6d81bda23daf11062bb" }
@@ -94,7 +90,9 @@ return packer.startup(function(use)
 
   -- snippets
   use { "L3MON4D3/LuaSnip", commit = "79b2019c68a2ff5ae4d732d50746c901dd45603a" } --snippet engine
-  use { "rafamadriz/friendly-snippets", commit = "d27a83a363e61009278b6598703a763ce9c8e617" } -- a bunch of snippets to use
+  -- use { "rafamadriz/friendly-snippets", commit = "d27a83a363e61009278b6598703a763ce9c8e617" } -- a bunch of snippets to use
+  use { "rjshrjndrn/friendly-snippets" } -- a bunch of snippets to use
+  use {'rjshrjndrn/vim-kubernetes'}
 
   -- LSP
   use { "neovim/nvim-lspconfig", commit = "148c99bd09b44cf3605151a06869f6b4d4c24455" } -- enable LSP
