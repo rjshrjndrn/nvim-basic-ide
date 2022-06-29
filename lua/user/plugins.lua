@@ -113,6 +113,7 @@ return packer.startup(function(use)
   use { "lewis6991/gitsigns.nvim", commit = "c18e016864c92ecf9775abea1baaa161c28082c3" }
   use { "tpope/vim-fugitive" }
   use {'tpope/vim-rhubarb'}
+  use {'aymericbeaumet/vim-symlink'}
 
   -- Repeat actions
   use {'tpope/vim-repeat'}
