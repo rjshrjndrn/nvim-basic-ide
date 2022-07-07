@@ -25,6 +25,10 @@ keymap("n", "<C-j>", "<C-w>j", opts)
 keymap("n", "<C-k>", "<C-w>k", opts)
 keymap("n", "<C-l>", "<C-w>l", opts)
 
+-- Better folding
+keymap("n", "<leader>a", "za", opts)
+keymap("n", "<leader>A", "zA", opts)
+
 -- Resize with arrows
 keymap("n", "<C-Up>", ":resize -2<CR>", opts)
 keymap("n", "<C-Down>", ":resize +2<CR>", opts)
@@ -64,7 +68,12 @@ keymap("n", "<leader>ff", ":Telescope find_files<CR>", opts)
 keymap("n", "<leader>ft", ":Telescope live_grep<CR>", opts)
 keymap("n", "<leader>fp", ":Telescope projects<CR>", opts)
 keymap("n", "<leader>fb", ":Telescope buffers<CR>", opts)
-keymap("n", "<leader>h", ":Telescope oldfiles<CR>", opts)
+-- keymap("n", "<leader>h", ":Telescope oldfiles<CR>", opts)
+
+-- FZF
+keymap("n", "<C-p>", ":Files <CR>", opts)
+keymap("n", "<leader>b", ":Buffers <CR>", opts)
+keymap("n", "<leader>h", ":History <CR>", opts)
 
 -- Git
 keymap("n", "<leader>gg", "<cmd>lua _LAZYGIT_TOGGLE()<CR>", opts)
