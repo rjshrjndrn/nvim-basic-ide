@@ -66,10 +66,11 @@ return packer.startup(function(use)
   use {'christoomey/vim-tmux-navigator'}
   use {'tmux-plugins/vim-tmux-focus-events'}
   -- vimwiki
-  use { 'vimwiki/vimwiki'}
+  use {"vimwiki/vimwiki", commit = "63af6e72dd3fa840bffb3ebcb8c96970c02e0913"}
 
+use{ 'fatih/vim-go'}
   -- Fzf
-  use {'junegunn/fzf'} 
+  use {'junegunn/fzf'}
   use {'junegunn/fzf.vim'}
   use {'junegunn/vim-easy-align'}
 
@@ -113,6 +114,7 @@ return packer.startup(function(use)
   use { "lewis6991/gitsigns.nvim", commit = "c18e016864c92ecf9775abea1baaa161c28082c3" }
   use { "tpope/vim-fugitive" }
   use {'tpope/vim-rhubarb'}
+  use { "junegunn/gv.vim" }
   use {'aymericbeaumet/vim-symlink'}
 
   -- Repeat actions
