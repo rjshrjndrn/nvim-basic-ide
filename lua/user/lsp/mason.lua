@@ -9,6 +9,7 @@ local servers = {
 	"yamlls",
   "terraformls",
   "tflint",
+  "terraform_lsp",
 }
 
 local settings = {
