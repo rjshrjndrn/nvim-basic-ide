@@ -38,8 +38,13 @@ keymap("n", "<leader>h", "<cmd>nohlsearch<CR>", opts)
 -- Close buffers
 keymap("n", "<S-q>", "<cmd>Bdelete!<CR>", opts)
 
--- Better paste
+-- Better copy/paste
 keymap("v", "p", '"_dP', opts)
+keymap("n", "<leader>y", '"+y', opts)
+keymap("n", "<leader>yy", 'V"+y', opts)
+keymap("n", "<leader>Y", '"+Y', opts)
+keymap("v", "<leader>y", '"+y', opts)
+keymap("v", "Y", '"+y', opts)
 
 -- Insert --
 -- Press jk fast to enter
