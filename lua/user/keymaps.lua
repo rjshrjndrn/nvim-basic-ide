@@ -87,3 +87,7 @@ keymap("n", "<leader>dt", "<cmd>lua require'dap'.terminate()<cr>", opts)
 
 -- Lsp
 keymap("n", "<leader>lf", "<cmd>lua vim.lsp.buf.format{ async = true }<cr>", opts)
+
+-- FZF
+keymap("n", "<C-p>", "<cmd>Files<cr>", opts)
+keymap("n", "<leader>h", "<cmd>History<cr>", opts)
