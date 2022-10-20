@@ -42,8 +42,7 @@ keymap("n", "<S-q>", "<cmd>Bdelete!<CR>", opts)
 keymap("v", "p", '"_dP', opts)
 keymap("n", "<leader>y", '"+y', opts)
 keymap("n", "<leader>yy", 'V"+y', opts)
-keymap("n", "<leader>Y", '"+Y', opts)
-keymap("v", "<leader>y", '"+y', opts)
+keymap("n", "<leader>Y", '"+y$', opts)
 keymap("v", "Y", '"+y', opts)
 
 -- Insert --
