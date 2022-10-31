@@ -10,6 +10,7 @@ local servers = {
   "terraformls",
   "tflint",
   "terraform_lsp",
+  "gopls",
 }
 
 local settings = {
