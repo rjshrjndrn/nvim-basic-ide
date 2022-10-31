@@ -61,9 +61,12 @@ return packer.startup(function(use)
   -- use { "goolord/alpha-nvim", commit = "0bb6fc0646bcd1cdb4639737a1cee8d6e08bcc31" }
   use { "tpope/vim-fugitive" }
   use {"tpope/vim-rhubarb"}--, opt = true, cmd = {'GBrowse'}}
+  use {"tpope/vim-unimpaired"}
   use { "christoomey/vim-tmux-navigator" }
   use {"vimwiki/vimwiki"}
+  use {'junegunn/fzf'}
   use {'junegunn/fzf.vim'}
+  use {'Pocco81/auto-save.nvim'}
 
   -- Colorschemes
   use { "folke/tokyonight.nvim", commit = "66bfc2e8f754869c7b651f3f47a2ee56ae557764" }
