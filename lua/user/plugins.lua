@@ -69,6 +69,9 @@ return packer.startup(function(use)
   use {'Pocco81/auto-save.nvim'}
   -- vim syntax for helm templates (yaml + gotmpl + sprig + custom)
   use {'towolf/vim-helm'}
+  -- minimize the amount of data to read to understand the content
+  -- Ref: https://this-week-in-neovim.org/2022/Nov/28#new-fsread.nvim
+  use {"nullchilly/fsread.nvim"}
 
   -- Cheat sheet
   use {'dbeniamine/cheat.sh-vim'}
