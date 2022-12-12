@@ -57,7 +57,7 @@ return packer.startup(function(use)
   use { "akinsho/toggleterm.nvim", commit = "2a787c426ef00cb3488c11b14f5dcf892bbd0bda" }
   use { "ahmedkhalf/project.nvim", commit = "628de7e433dd503e782831fe150bb750e56e55d6" }
   use { "lewis6991/impatient.nvim", commit = "b842e16ecc1a700f62adb9802f8355b99b52a5a6" }
-  use { "lukas-reineke/indent-blankline.nvim", commit = "db7cbcb40cc00fc5d6074d7569fb37197705e7f6" }
+  -- use { "lukas-reineke/indent-blankline.nvim", commit = "db7cbcb40cc00fc5d6074d7569fb37197705e7f6" }
   -- use { "goolord/alpha-nvim", commit = "0bb6fc0646bcd1cdb4639737a1cee8d6e08bcc31" }
   use { "tpope/vim-fugitive" }
   use {"tpope/vim-rhubarb"}--, opt = true, cmd = {'GBrowse'}}
@@ -67,6 +67,11 @@ return packer.startup(function(use)
   use {'junegunn/fzf'}
   use {'junegunn/fzf.vim'}
   use {'Pocco81/auto-save.nvim'}
+  -- vim syntax for helm templates (yaml + gotmpl + sprig + custom)
+  use {'towolf/vim-helm'}
+
+  -- Cheat sheet
+  use {'dbeniamine/cheat.sh-vim'}
 
   -- Colorschemes
   use { "folke/tokyonight.nvim", commit = "66bfc2e8f754869c7b651f3f47a2ee56ae557764" }
