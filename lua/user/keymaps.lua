@@ -93,3 +93,4 @@ keymap("n", "<leader>lf", "<cmd>lua vim.lsp.buf.format{ async = true }<cr>", opt
 -- FZF
 keymap("n", "<C-p>", "<cmd>Files<cr>", opts)
 keymap("n", "<leader>h", "<cmd>History<cr>", opts)
+keymap("n", "<leader>b", ":Buffers<CR>", opts)
