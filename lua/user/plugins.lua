@@ -66,12 +66,20 @@ return packer.startup(function(use)
   use {"vimwiki/vimwiki"}
   use {'junegunn/fzf'}
   use {'junegunn/fzf.vim'}
+  use {'junegunn/vim-easy-align'}
   use {'Pocco81/auto-save.nvim'}
   -- vim syntax for helm templates (yaml + gotmpl + sprig + custom)
   use {'towolf/vim-helm'}
   -- minimize the amount of data to read to understand the content
   -- Ref: https://this-week-in-neovim.org/2022/Nov/28#new-fsread.nvim
   use {"nullchilly/fsread.nvim"}
+
+  use {"fatih/vim-go",
+    -- run = vim.cmd("GoUpdateBinaries"),
+    }
+  use { "iamcco/markdown-preview.nvim",
+    run = function() vim.fn["mkdp#util#install"]() end,
+  }
 
   -- Cheat sheet
   use {'dbeniamine/cheat.sh-vim'}
