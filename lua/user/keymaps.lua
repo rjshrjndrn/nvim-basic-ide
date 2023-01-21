@@ -47,6 +47,7 @@ keymap("n", "<leader>y", '"+y', opts)
 keymap("n", "<leader>yy", 'V"+y', opts)
 keymap("n", "<leader>Y", '"+y$', opts)
 keymap("v", "Y", '"+y', opts)
+keymap("n", "<C-Y>", 'gg0"+yG', opts)
 
 -- Insert --
 -- Press jk fast to enter
@@ -68,6 +69,7 @@ keymap("n", "<leader>ff", ":Telescope find_files<CR>", opts)
 keymap("n", "<leader>ft", ":Telescope live_grep<CR>", opts)
 keymap("n", "<leader>fp", ":Telescope projects<CR>", opts)
 keymap("n", "<leader>fb", ":Telescope buffers<CR>", opts)
+keymap("n", "<leader>fs", ":Telescope lsp_document_symbols<CR>", opts)
 
 -- Git
 keymap("n", "<leader>gg", "<cmd>lua _LAZYGIT_TOGGLE()<CR>", opts)
