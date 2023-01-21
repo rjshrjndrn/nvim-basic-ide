@@ -80,6 +80,14 @@ return packer.startup(function(use)
   use { "iamcco/markdown-preview.nvim",
     run = function() vim.fn["mkdp#util#install"]() end,
   }
+  use {
+  "folke/which-key.nvim",
+  config = function()
+    vim.o.timeout = true
+    vim.o.timeoutlen = 300
+    require("which-key").setup {}
+  end
+  }
 
   -- Cheat sheet
   use {'dbeniamine/cheat.sh-vim'}
