@@ -11,6 +11,7 @@ local servers = {
   "tflint",
   "terraform_lsp",
   "gopls",
+  "dartls",
 }
 
 local settings = {
