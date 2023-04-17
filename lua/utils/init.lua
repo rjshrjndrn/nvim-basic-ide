@@ -9,6 +9,8 @@ M.servers = {
   "bashls",
   "jsonls",
   "yamlls",
+  "terraformls",
+  "terraform_lsp",
+  "tflint",
 }
-
 return M
