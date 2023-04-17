@@ -21,5 +21,6 @@ null_ls.setup {
     formatting.google_java_format,
     formatting.terrafmt,
     diagnostics.flake8,
+    null_ls.builtins.formatting.packer,
   },
 }

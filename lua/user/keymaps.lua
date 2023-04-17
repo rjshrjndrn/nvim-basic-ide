@@ -47,7 +47,7 @@ keymap("n", "<leader>y", '"+y', opts)
 keymap("n", "<leader>yy", 'V"+y', opts)
 keymap("n", "<leader>Y", '"+y$', opts)
 keymap("v", "Y", '"+y', opts)
-keymap("n", "<C-Y>", 'gg0"+yG', opts)
+keymap("n", "<C-Y>", 'magg0"+yG`a', opts)
 
 -- Insert --
 -- Press jk fast to enter
