@@ -32,6 +32,9 @@ keymap("n", "<C-Right>", ":vertical resize +2<CR>", opts)
 keymap("n", "<S-l>", ":bnext<CR>", opts)
 keymap("n", "<S-h>", ":bprevious<CR>", opts)
 
+-- Tabs
+keymap("n", "<S-T>", ":tabnew<CR>", opts)
+
 -- Clear highlights
 keymap("n", "<leader>h", "<cmd>nohlsearch<CR>", opts)
 
@@ -39,7 +42,12 @@ keymap("n", "<leader>h", "<cmd>nohlsearch<CR>", opts)
 keymap("n", "<S-q>", "<cmd>Bdelete!<CR>", opts)
 
 -- Better paste
-keymap("v", "p", 'P', opts)
+keymap("v", "p", '"_dP', opts)
+keymap("n", "<leader>y", '"+y', opts)
+keymap("n", "<leader>yy", 'V"+y', opts)
+keymap("n", "<leader>Y", '"+y$', opts)
+keymap("v", "Y", '"+y', opts)
+keymap("n", "<C-Y>", 'magg0"+yG`a', opts)
 
 -- Insert --
 -- Press jk fast to enter
@@ -53,13 +61,15 @@ keymap("v", ">", ">gv", opts)
 -- Plugins --
 
 -- NvimTree
-keymap("n", "<leader>e", ":NvimTreeToggle<CR>", opts)
+keymap("n", "<leader>e", ":NvimTreeFindFile<CR>", opts)
+keymap("n", "<C-n>", ":NvimTreeToggle<CR>", opts)
 
 -- Telescope
 keymap("n", "<leader>ff", ":Telescope find_files<CR>", opts)
 keymap("n", "<leader>ft", ":Telescope live_grep<CR>", opts)
 keymap("n", "<leader>fp", ":Telescope projects<CR>", opts)
 keymap("n", "<leader>fb", ":Telescope buffers<CR>", opts)
+keymap("n", "<leader>fs", ":Telescope lsp_document_symbols<CR>", opts)
 
 -- Git
 keymap("n", "<leader>gg", "<cmd>lua _LAZYGIT_TOGGLE()<CR>", opts)
@@ -81,3 +91,8 @@ keymap("n", "<leader>dt", "<cmd>lua require'dap'.terminate()<cr>", opts)
 
 -- Lsp
 keymap("n", "<leader>lf", "<cmd>lua vim.lsp.buf.format{ async = true }<cr>", opts)
+
+-- FZF
+keymap("n", "<C-p>", "<cmd>Files<cr>", opts)
+keymap("n", "<leader>h", "<cmd>History<cr>", opts)
+keymap("n", "<leader>b", ":Buffers<CR>", opts)
