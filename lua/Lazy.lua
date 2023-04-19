@@ -19,6 +19,7 @@ require("lazy").setup("user", {
   install = { colorscheme = { require("user.colorscheme").name } },
   defaults = { lazy = true, version = "57cce98dfdb2f2dd05a0567d89811e6d0505e13b" },
   ui = { wrap = "true" },
+  checker = { enabled = true, notify = false },
   change_detection = { enabled = true, notify = false },
   checker = { enabled = true },
   debug = false,
