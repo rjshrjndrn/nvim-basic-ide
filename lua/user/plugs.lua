@@ -10,6 +10,7 @@ local M = {
   { "towolf/vim-helm", lazy = false },
   { "junegunn/vim-easy-align", lazy = false },
   { "fatih/vim-go", ft = "go" },
+  { "wincent/ferret", lazy = false },
 }
 
 -- function M.config()

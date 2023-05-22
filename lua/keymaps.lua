@@ -96,3 +96,9 @@ keymap("n", "<leader>lf", "<cmd>lua vim.lsp.buf.format{ async = true }<cr>", opt
 keymap("n", "<C-p>", "<cmd>Files<cr>", opts)
 keymap("n", "<leader>h", "<cmd>History<cr>", opts)
 keymap("n", "<leader>b", ":Buffers<CR>", opts)
+
+-- Ferret
+keymap("v", "//", [["zy/<C-r>z<cr>]], opts)
+keymap("v", "/b", [["zy:Back! <C-r>z<cr>]], opts)
+keymap("v", "/B", [["zy:Back! -w <C-r>z<cr>]], opts)
+keymap("v", "/S", [["zy:Lack! -w <C-r>z<cr>]], opts)
