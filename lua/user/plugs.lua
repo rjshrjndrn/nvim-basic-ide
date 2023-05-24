@@ -13,8 +13,4 @@ local M = {
   { "wincent/ferret", lazy = false },
 }
 
--- function M.config()
---   require("fugitive").setup {}
--- end
-
 return M
