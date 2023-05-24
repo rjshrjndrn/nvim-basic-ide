@@ -141,6 +141,7 @@ function M.config()
         path = "[PATH]",
         emoji = "",
         cmp_tabnine = "[T9]",
+        codeium = "[COD]",
         })[entry.source.name]
         return vim_item
       end,
@@ -151,6 +152,7 @@ function M.config()
       { name = "luasnip" },
       { name = "buffer" },
       { name = "path" },
+      { name = "codeium" },
     },
     confirm_opts = {
       behavior = cmp.ConfirmBehavior.Replace,
