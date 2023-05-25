@@ -104,8 +104,8 @@ function M.config()
       ["<Tab>"] = cmp.mapping(function(fallback)
         if cmp.visible() then
           cmp.select_next_item()
-        elseif luasnip.expandable() then
-          luasnip.expand()
+        -- elseif luasnip.expandable() then
+        --   luasnip.expand()
         elseif luasnip.expand_or_jumpable() then
           luasnip.expand_or_jump()
         elseif check_backspace() then
@@ -148,11 +148,11 @@ function M.config()
     },
     sources = {
       { name = "nvim_lsp" },
+      { name = "codeium" },
       { name = "nvim_lua" },
       { name = "luasnip" },
       { name = "buffer" },
       { name = "path" },
-      { name = "codeium" },
     },
     confirm_opts = {
       behavior = cmp.ConfirmBehavior.Replace,
