@@ -12,6 +12,8 @@ local M = {
 function M.config()
   require("bufferline").setup {
     options = {
+      -- https://github.com/akinsho/bufferline.nvim/blob/02d795081e6a24ec1fd506c513491543793d0780/doc/bufferline.txt#L69
+      buffer_close_icon = '󰅙',
       close_command = "Bdelete! %d",       -- can be a string | function, see "Mouse actions"
       right_mouse_command = "Bdelete! %d", -- can be a string | function, see "Mouse actions"
       offsets = { { filetype = "NvimTree", text = "", padding = 1 } },
