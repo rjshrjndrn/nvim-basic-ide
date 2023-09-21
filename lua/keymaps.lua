@@ -52,6 +52,9 @@ keymap("n", "<C-Y>", 'magg0"+yG`a', opts)
 -- Insert --
 -- Press jk fast to enter
 keymap("i", "jk", "<ESC>", opts)
+-- Better delete
+-- c-delete to delete word
+keymap('i', '<C-H>', '<C-W>', opts)
 
 -- Visual --
 -- Stay in indent mode
