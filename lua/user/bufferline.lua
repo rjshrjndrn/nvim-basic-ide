@@ -1,6 +1,7 @@
 local M = {
   "akinsho/bufferline.nvim",
-  commit = "c7492a76ce8218e3335f027af44930576b561013",
+  -- commit = "c7492a76ce8218e3335f027af44930576b561013",
+  branch = "main",
   event = { "BufReadPre", "BufAdd", "BufNew", "BufReadPost" },
   dependencies = {
     {
@@ -17,7 +18,8 @@ function M.config()
       close_command = "Bdelete! %d",       -- can be a string | function, see "Mouse actions"
       right_mouse_command = "Bdelete! %d", -- can be a string | function, see "Mouse actions"
       offsets = { { filetype = "NvimTree", text = "", padding = 1 } },
-      separator_style = "thin",            -- | "thick" | "thin" | { 'any', 'any' },
+      -- separator_style = "thin",            -- | "thick" | "thin" | { 'any', 'any' },
+      separator_style = {'', ''},
     },
     highlights = {
       fill = {

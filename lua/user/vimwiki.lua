@@ -1,5 +1,10 @@
 local M = {
-  { "vimwiki/vimwiki", ft = "markdown", cmd = "VimwikiIndex" },
+  { "vimwiki/vimwiki", ft = { "vimwiki" }, cmd = "VimwikiIndex",
+    keys = {
+        { "<leader>ww", desc = "vimwiki index" },
+        { "<leader>w<leader>w", desc = "generate git message" },
+    },
+    lazy = true},
 }
 
 vim.g.vimwiki_markdown_link_ext = 1
@@ -11,11 +16,7 @@ vim.g.vimwiki_list = {
   { path = "~/vimwiki_personal/", syntax = "markdown", ext = ".md" },
 }
 vim.g.vimwiki_ext2syntax =
-{ [".md"] = "markdown",[".mkd"] = "markdown",[".wiki"] = "media",[".rajesh"] = "markdown" }
--- vim.g.vimwiki_ext2syntax = { md= 'markdown',
---     mkd= 'markdown',
---     wiki = 'media'
---   }
+{ [".md"] = "markdown",[".mkd"] = "markdown",[".wiki"] = "media",[".markdown"] = "markdown" }
 vim.g.vimwiki_folding = ""
 vim.g.vimwiki_listsyms = " ○◐●✓"
 
