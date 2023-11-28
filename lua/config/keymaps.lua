@@ -83,3 +83,12 @@ keymap("v", "//", [["zy/<C-r>z<cr>]], opts)
 keymap("v", "/b", [["zy:Back! <C-r>z<cr>]], opts)
 keymap("v", "/B", [["zy:Back! -w <C-r>z<cr>]], opts)
 keymap("v", "/S", [["zy:Lack! -w <C-r>z<cr>]], opts)
+
+-- Telescope
+keymap("n", "<leader>ls", ":Telescope lsp_document_symbols<CR>", opts)
+
+-- Aerial
+keymap("n", "<leader>a", "<cmd>AerialToggle!<CR>")
+
+-- Lazy-Disable
+keymap("n", "<leader>l", "", opts)
