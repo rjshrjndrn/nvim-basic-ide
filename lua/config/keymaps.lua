@@ -66,7 +66,16 @@ keymap("v", ">", ">gv", opts)
 
 -- Plugins --
 
+-- vim-tmux-navigator
+if os.getenv("TMUX") then
+  keymap("n", "<C-h>", "<cmd>TmuxNavigateLeft<cr>")
+  keymap("n", "<C-j>", "<cmd>TmuxNavigateDown<cr>")
+  keymap("n", "<C-k>", "<cmd>TmuxNavigateUp<cr>")
+  keymap("n", "<C-l>", "<cmd>TmuxNavigateRight<cr>")
+end
+
 -- Comment
+keymap({ "n" }, "<Space>/", "<NOP>", opts)
 keymap("n", "<leader>/", "<cmd>lua require('Comment.api').toggle.linewise.current()<CR>", opts)
 keymap("x", "<leader>/", "<esc><cmd>lua require('Comment.api').toggle.linewise(vim.fn.visualmode())<CR>", opts)
 
@@ -74,9 +83,10 @@ keymap("x", "<leader>/", "<esc><cmd>lua require('Comment.api').toggle.linewise(v
 keymap("n", "<leader>lf", "<cmd>lua vim.lsp.buf.format{ async = true }<cr>", opts)
 
 -- FZF
-keymap("n", "<C-p>", "<cmd>Files<cr>", opts)
-keymap("n", "<leader>h", "<cmd>History<cr>", opts)
-keymap("n", "<leader>b", ":Buffers<CR>", opts)
+-- keymap("n", "<C-p>", "<cmd>Files<cr>", opts)
+keymap("n", "<C-p>", ":Telescope find_files<CR>", opts)
+keymap("n", "<leader>h", ":Telescope oldfiles<CR>", opts)
+keymap("n", "<leader>b", ":Telescope buffers<CR>", opts)
 
 -- Ferret
 keymap("v", "//", [["zy/<C-r>z<cr>]], opts)
@@ -92,3 +102,4 @@ keymap("n", "<leader>a", "<cmd>AerialToggle!<CR>")
 
 -- Lazy-Disable
 keymap("n", "<leader>l", "", opts)
+-- keymap({ "n", "i" }, "<esc>", "<esc>", opts)

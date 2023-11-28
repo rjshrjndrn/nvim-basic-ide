@@ -9,4 +9,5 @@ return {
   },
   { "rcarriga/nvim-notify", enabled = false },
   { "echasnovski/mini.comment", enabled = false },
+  { "nvimdev/dashboard-nvim", enabled = false },
 }
