@@ -12,6 +12,8 @@ return {
       bashls = {},
       tflint = {},
       gopls = {},
+      pyright = {},
+      jsonls = {},
     },
   },
 }
