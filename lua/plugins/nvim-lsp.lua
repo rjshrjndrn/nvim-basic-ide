@@ -14,6 +14,7 @@ return {
       gopls = {},
       pyright = {},
       jsonls = {},
+      helm_ls = {},
     },
   },
 }
