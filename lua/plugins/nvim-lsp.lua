@@ -8,7 +8,9 @@ return {
       terraformls = {
         filetypes = { "tf", "terraform", "hcl", "terraform-vars" },
       },
-      yamlls = {},
+      yamlls = {
+        filetypes = { "yml", "yaml", "helm" },
+      },
       bashls = {},
       tflint = {},
       gopls = {},
