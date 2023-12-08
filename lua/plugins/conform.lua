@@ -4,10 +4,10 @@ return {
   opts = {
     -- Format bash using space rather than tab
     formatters = {
-      shfmt_i = { command = "shfmt", args = { "-i", "2" } },
+      shfmt_i = { command = "shfmt", args = { "-i", "4" } },
     },
     formatters_by_ft = {
-      sh = { "shfmt" },
+      sh = { "shfmt_i" },
     },
   },
 }
