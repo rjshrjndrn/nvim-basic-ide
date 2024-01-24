@@ -9,10 +9,10 @@ return {
         filetypes = { "tf", "terraform", "hcl", "terraform-vars" },
       },
       helm_ls = {
-        filetypes = { "helm" },
+        -- filetypes = { "helm" },
       },
       yamlls = {
-        filetypes = { "yml", "yaml", "helm" },
+        filetypes = { "yml", "yaml" },
       },
       bashls = {
         filetypes = { "sh", "bash" },
