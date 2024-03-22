@@ -8,6 +8,8 @@ return {
     },
     formatters_by_ft = {
       sh = { "shfmt_i" },
+      -- Conform will run multiple formatters sequentially
+      python = { "isort", "black" },
     },
   },
 }
