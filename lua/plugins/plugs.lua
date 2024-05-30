@@ -7,7 +7,7 @@ local M = {
   { "junegunn/vim-easy-align", lazy = false },
   { "towolf/vim-helm", lazy = false },
   { "junegunn/vim-easy-align", lazy = false },
-  { "fatih/vim-go", ft = "go" },
+  -- { "fatih/vim-go", ft = "go", lazy = false },
   { "wincent/ferret", lazy = false },
   {
     "christoomey/vim-tmux-navigator",

@@ -12,4 +12,10 @@ vim.opt.timeoutlen = 1000
 vim.opt.updatetime = 100 -- faster completion (4000ms default)
 vim.opt.ttimeoutlen = 0
 vim.opt.diffopt:append({ "vertical" })
-vim.o.shada = "!,'1000,<50,s10,h" -- Increase old file limit
+vim.opt.relativenumber = false
+vim.o.shada = "!,'1000,<50,s50,h" -- Increase old file limit
+
+-- Enable folding with Tree-sitter
+-- vim.opt.foldmethod = "indent"
+-- vim.opt.foldexpr = "v:lua.vim.treesitter.foldexpr()"
+-- vim.opt.foldtext = "v:lua.vim.treesitter.foldtext()"

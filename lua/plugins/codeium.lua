@@ -6,7 +6,10 @@ return {
       "Exafunction/codeium.nvim",
       cmd = "Codeium",
       -- build = ":Codeium Auth",
-      opts = {},
+      opts = {
+        enterprise_mode = false,
+        enable_chat = false,
+      },
     },
   },
   ---@param opts cmp.ConfigSchema
