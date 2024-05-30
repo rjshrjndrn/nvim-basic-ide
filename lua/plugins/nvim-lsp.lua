@@ -21,6 +21,9 @@ return {
       gopls = {},
       pyright = {},
       jsonls = {},
+      ansiblels = {
+        filetypes = { "yaml.ansible" },
+      },
     },
     setup = {
       yamlls = function(server, opts)

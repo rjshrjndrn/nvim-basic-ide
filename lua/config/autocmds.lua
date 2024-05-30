@@ -3,3 +3,12 @@
 -- Add any additional autocmds here
 
 vim.cmd("autocmd BufEnter * ++nested if winnr('$') == 1 && bufname() == 'Aeril' . tabpagenr() | quit | endif")
+vim.api.nvim_exec(
+  [[
+augroup AnsibleYaml
+  autocmd!
+  autocmd BufRead,BufNewFile */ansible/* set filetype=yaml.ansible
+augroup END
+]],
+  false
+)
