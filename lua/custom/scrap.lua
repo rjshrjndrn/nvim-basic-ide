@@ -1,7 +1,9 @@
 -- ~/.config/nvim/lua/custom/scrap.lua
 
 local function scrap()
-  local buf_name = "/tmp/scrap.txt"
+  -- Get the Neovim shared data directory
+  local data_dir = vim.fn.stdpath("data")
+  local buf_name = data_dir .. "/scrap.txt"
   local existing_window = nil
   for _, win in ipairs(vim.api.nvim_list_wins()) do
     local buf = vim.api.nvim_win_get_buf(win)
