@@ -19,7 +19,6 @@ local function scrap()
     vim.cmd("vsplit")
     local buf = vim.api.nvim_create_buf(false, true) -- create an unnamed buffer
     vim.api.nvim_buf_set_name(buf, buf_name)
-    vim.bo[buf].bufhidden = "wipe" -- set bufhidden option using vim.bo
     vim.api.nvim_win_set_buf(0, buf) -- set the buffer to the current window
 
     -- Resize the vertical split to 1/4 of the screen width
@@ -33,6 +32,21 @@ local function scrap()
       vim.api.nvim_buf_set_lines(buf, 0, -1, false, vim.split(content, "\n"))
       file:close()
     end
+
+    -- Set buffer options
+    vim.api.nvim_buf_set_option(buf, "wrap", true) -- enable wrapping
+    vim.bo.bufhidden = "wipe" -- set bufhidden option
+    -- Move the cursor to the end of the last line and enter insert mode
+    local last_line = vim.api.nvim_buf_line_count(buf)
+    local last_col = #vim.api.nvim_buf_get_lines(buf, last_line - 1, last_line, false)[1]
+    vim.api.nvim_win_set_cursor(0, { last_line, last_col })
+
+    -- Start insert mode
+    -- vim.api.nvim_feedkeys("i", "n", true)
+    -- Schedule a function
+    -- vim.schedule(function()
+    --   vim.api.nvim_command("startinsert")
+    -- end)
 
     -- Function to write buffer content to /tmp/scrap.txt
     local function write_to_file()
