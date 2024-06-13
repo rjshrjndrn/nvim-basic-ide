@@ -12,7 +12,7 @@ keymap("v", "p", '"_dP', opts)
 keymap("n", "<leader>yy", 'V"+y', opts)
 keymap("n", "<leader>Y", '"+y$', opts)
 keymap("v", "Y", '"+y', opts)
-keymap("n", "<C-Y>", 'magg0"+yG`a', opts)
+keymap("n", "<C-Y>", 'magg0"+yG`a:delmarks a<CR>', opts)
 
 -- Visual --
 -- Stay in indent mode
