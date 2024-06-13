@@ -38,6 +38,7 @@ local function scrap()
     -- Set buffer options
     vim.api.nvim_buf_set_option(buf, "wrap", true) -- enable wrapping
     vim.bo.bufhidden = "wipe" -- set bufhidden option
+    vim.bo.filetype = "markdown" -- set filetype
     -- Move the cursor to the end of the last line and enter insert mode
     local last_line = vim.api.nvim_buf_line_count(buf)
     local last_col = #vim.api.nvim_buf_get_lines(buf, last_line - 1, last_line, false)[1]
