@@ -8,3 +8,5 @@ vim.opt.relativenumber = false
 vim.opt.diffopt:append("vertical")
 vim.o.shada = "!,'1000,<100,s50,h"
 vim.o.clipboard = ""
+-- disable LSP log to avoid infinitely growing log file
+vim.lsp.set_log_level("off")
