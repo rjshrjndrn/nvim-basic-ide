@@ -46,6 +46,7 @@ return {
             schemas = {
               -- ref: https://github.com/steeef/dotfiles/pull/5/files
               ["https://raw.githubusercontent.com/datreeio/CRDs-catalog/main/argoproj.io/application_v1alpha1.json"] = "*argo/*.yaml",
+              ["https://raw.githubusercontent.com/datreeio/CRDs-catalog/main/argoproj.io/applicationset_v1alpha1.json"] = "*argo/*appset.yaml",
             },
           },
         },
