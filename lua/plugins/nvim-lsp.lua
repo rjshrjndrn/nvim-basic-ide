@@ -45,8 +45,10 @@ return {
             },
             schemas = {
               -- ref: https://github.com/steeef/dotfiles/pull/5/files
-              ["https://raw.githubusercontent.com/datreeio/CRDs-catalog/main/argoproj.io/application_v1alpha1.json"] = "*argo/*.yaml",
-              ["https://raw.githubusercontent.com/datreeio/CRDs-catalog/main/argoproj.io/applicationset_v1alpha1.json"] = "*argo/*appset.yaml",
+              -- TODO: load based on kind:
+              ["https://raw.githubusercontent.com/datreeio/CRDs-catalog/main/argoproj.io/application_v1alpha1.json"] = "argo/*application/*.yaml",
+              ["https://raw.githubusercontent.com/datreeio/CRDs-catalog/main/argoproj.io/applicationset_v1alpha1.json"] = "argo/*appset/*.yaml",
+              ["https://raw.githubusercontent.com/datreeio/CRDs-catalog/main/argoproj.io/appproject_v1alpha1.json"] = "argo/*project/*.yaml",
             },
           },
         },
