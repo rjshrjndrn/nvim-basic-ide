@@ -18,6 +18,7 @@ keymap("n", "<C-Y>", 'magg0"+yG`a:delmarks a<CR>', opts)
 -- Stay in indent mode
 keymap("v", "<", "<gv", opts)
 keymap("v", ">", ">gv", opts)
+-- keymap("n", "//", LazyVim.pick("live_grep", { cwd = "~/.dotfiles" }), opts)
 
 -- Plugins --
 
