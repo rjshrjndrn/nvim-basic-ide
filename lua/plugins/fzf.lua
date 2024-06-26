@@ -8,8 +8,9 @@ return {
   },
   opts = function(_, opts)
     local config = require("fzf-lua.config")
-    local defaults = require("fzf-lua.profiles.default-title")
+    -- Refer: https://github.com/ibhagwan/fzf-lua/blob/main/lua/fzf-lua/defaults.lua
     local file_win_opts = {
+      fullscreen = true,
       preview = {
         layout = "vertical",
         vertical = "up:70%",
@@ -19,19 +20,18 @@ return {
     config.defaults.keymap.builtin["<a-f>"] = "toggle-fullscreen"
     config.defaults.keymap.builtin["<c-w>"] = "toggle-preview-wrap"
     config.defaults.keymap.builtin["<c-p>"] = "toggle-preview"
-    return vim.tbl_deep_extend("force", defaults, {
+    return {
       defaults = {
-        -- formatter = "path.filename_first",
+        -- formatter = "path.dirname_first",
         formatter = "path.filename_first",
       },
-      files = {
-        winopts = file_win_opts,
-      },
+      files = { winopts = file_win_opts },
+      oldfiles = { winopts = file_win_opts },
       git = {
         files = {
           winopts = file_win_opts,
         },
       },
-    })
+    }
   end,
 }
