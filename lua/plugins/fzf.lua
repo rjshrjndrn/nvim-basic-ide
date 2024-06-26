@@ -8,6 +8,7 @@ return {
   },
   opts = function(_, opts)
     local config = require("fzf-lua.config")
+    local actions = require("fzf-lua.actions")
     -- Refer: https://github.com/ibhagwan/fzf-lua/blob/main/lua/fzf-lua/defaults.lua
     local file_win_opts = {
       fullscreen = true,
@@ -30,6 +31,11 @@ return {
       git = {
         files = {
           winopts = file_win_opts,
+        },
+        status = {
+          actions = {
+            ["ctrl-s"] = { fn = actions.git_stage_unstage, reload = true },
+          },
         },
       },
     }
