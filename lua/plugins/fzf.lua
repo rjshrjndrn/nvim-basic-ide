@@ -12,5 +12,11 @@ return {
     config.defaults.keymap.builtin["<a-f>"] = "toggle-fullscreen"
     config.defaults.keymap.builtin["<c-w>"] = "toggle-preview-wrap"
     config.defaults.keymap.builtin["<c-p>"] = "toggle-preview"
+    opts.winopts = {
+      preview = {
+        layout = "vertical",
+        vertical = "up:70%",
+      },
+    }
   end,
 }
