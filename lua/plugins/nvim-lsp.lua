@@ -8,6 +8,22 @@ return {
       terraformls = {
         filetypes = { "tf", "terraform", "hcl", "terraform-vars" },
       },
+      gopls = {
+        settings = {
+          gopls = {
+            hints = {
+              assignVariableTypes = false,
+              compositeLiteralFields = false,
+              compositeLiteralTypes = false,
+              constantValues = false,
+              functionTypeParameters = false,
+              parameterNames = false,
+              rangeVariableTypes = false,
+            },
+            usePlaceholders = false,
+          },
+        },
+      },
       helm_ls = {
         -- filetypes = { "helm" },
         -- root_dir = require("lspconfig").util.root_pattern("Chart.yaml"),
@@ -57,44 +73,6 @@ return {
         filetypes = { "sh", "bash" },
       },
       tflint = {},
-      gopls = {
-        settings = {
-          gopls = {
-            gofumpt = true,
-            -- codelenses = {
-            --   gc_details = false,
-            --   generate = false,
-            --   regenerate_cgo = false,
-            --   run_govulncheck = false,
-            --   test = false,
-            --   tidy = true,
-            --   upgrade_dependency = false,
-            --   vendor = false,
-            -- },
-            hints = {
-              assignVariableTypes = false,
-              -- compositeLiteralFields = false,
-              -- compositeLiteralTypes = false,
-              -- constantValues = false,
-              functionTypeParameters = false,
-              parameterNames = false,
-              -- rangeVariableTypes = false,
-            },
-            analyses = {
-              fieldalignment = true,
-              nilness = true,
-              unusedparams = true,
-              unusedwrite = true,
-              useany = true,
-            },
-            -- usePlaceholders = false,
-            -- completeUnimported = true,
-            staticcheck = false,
-            -- directoryFilters = { "-.git", "-.vscode", "-.idea", "-.vscode-test", "-node_modules" },
-            -- semanticTokens = true,
-          },
-        },
-      },
       pyright = {},
       jsonls = {},
       ansiblels = {
