@@ -22,6 +22,7 @@ return {
     config.defaults.keymap.builtin["<c-p>"] = "toggle-preview"
     opts.files = vim.tbl_deep_extend("force", opts.files, { winopts = file_win_opts })
     opts.oldfiles = vim.tbl_deep_extend("force", opts.oldfiles, { winopts = file_win_opts })
+    opts.buffers = vim.tbl_deep_extend("force", opts.oldfiles, { winopts = file_win_opts })
     opts.git.files = vim.tbl_deep_extend("force", opts.git.files, { winopts = file_win_opts })
   end,
 }
