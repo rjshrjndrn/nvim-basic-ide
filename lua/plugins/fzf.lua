@@ -3,8 +3,8 @@ return {
   keys = {
     { "//", LazyVim.pick("grep_cword"), desc = "Word (Root Dir)" },
     { "//", LazyVim.pick("grep_visual"), mode = "v", desc = "Selection (Root Dir)" },
-    { "??", LazyVim.pick("grep_cword", { root = false }), desc = "Word (Root Dir)" },
-    { "??", LazyVim.pick("grep_visual", { root = false }), mode = "v", desc = "Selection (Root Dir)" },
+    { "??", LazyVim.pick("grep_cword", { root = false }), desc = "Word (CW Dir)" },
+    { "??", LazyVim.pick("grep_visual", { root = false }), mode = "v", desc = "Selection (CW Dir)" },
   },
   opts = function(_, opts)
     local config = require("fzf-lua.config")
