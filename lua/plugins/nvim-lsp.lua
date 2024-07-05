@@ -20,7 +20,7 @@ return {
               parameterNames = false,
               rangeVariableTypes = false,
             },
-            usePlaceholders = false,
+            usePlaceholders = true,
           },
         },
       },
@@ -30,15 +30,6 @@ return {
       },
       yamlls = {
         filetypes = { "yml", "yaml" },
-        -- Have to add this for yamlls to understand that we support line folding
-        capabilities = {
-          textDocument = {
-            foldingRange = {
-              dynamicRegistration = false,
-              lineFoldingOnly = true,
-            },
-          },
-        },
         -- lazy-load schemastore when needed
         on_new_config = function(new_config)
           new_config.settings.yaml.schemas =
@@ -49,7 +40,7 @@ return {
           yaml = {
             keyOrdering = false,
             format = {
-              enable = true,
+              enable = false,
             },
             validate = true,
             schemaStore = {
