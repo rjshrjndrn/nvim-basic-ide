@@ -1,5 +1,5 @@
 local M = {
-  { "vimwiki/vimwiki", ft = "markdown", cmd = "VimwikiIndex", event = "VeryLazy" },
+  { "vimwiki/vimwiki", ft = "markdown", cmd = "VimwikiIndex" }, --, event = "VeryLazy" },
 }
 
 vim.g.vimwiki_markdown_link_ext = 1

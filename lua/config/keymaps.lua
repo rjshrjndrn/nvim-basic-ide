@@ -20,7 +20,8 @@ keymap("v", "<", "<gv", opts)
 keymap("v", ">", ">gv", opts)
 
 -- Folds
-keymap("n", "zz", "zA", opts)
+keymap("n", ";z", "zM", opts)
+keymap("n", ";a", "zA", opts)
 
 -- Plugins --
 
