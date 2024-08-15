@@ -23,6 +23,13 @@ keymap("v", ">", ">gv", opts)
 keymap("n", ";z", "zM", opts)
 keymap("n", ";a", "zA", opts)
 
+-- quit/write
+vim.keymap.del("n", "<c-/>")
+vim.keymap.del("n", "<c-_>")
+keymap("n", "<c-/>", ":q<CR>", opts)
+keymap("n", "<c-'>", ":q!<CR>", opts)
+keymap("n", "<c-;>", ":w<CR>", opts)
+
 -- Plugins --
 
 -- vim-tmux-navigator
