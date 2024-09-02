@@ -43,7 +43,8 @@ local function scrap()
 
     --
     -- Set buffer options
-    vim.api.nvim_buf_set_option(buf, "wrap", true) -- enable wrapping
+    vim.api.nvim_set_option_value("wrap", true, { scope = "local", win = 0 }) -- enable wrapping for the current window
+    vim.api.nvim_set_option_value("number", false, { scope = "local", win = 0 }) -- enable wrapping for the current window
     vim.bo.bufhidden = "wipe" -- set bufhidden option
     vim.bo.filetype = "markdown" -- set filetype
     -- Move the cursor to the end of the last line and enter insert mode
