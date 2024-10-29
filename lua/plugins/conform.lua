@@ -7,6 +7,7 @@ return {
       shfmt_i = { command = "shfmt", args = { "-i", "4" } },
     },
     formatters_by_ft = {
+      hcl = { "hcl" },
       go = { "gofumpt" },
       sh = { "shfmt_i" },
       -- Conform will run multiple formatters sequentially
