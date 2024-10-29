@@ -4,5 +4,6 @@ return {
     "stylua",
     "shfmt",
     "helm_ls",
+    "hcl",
   },
 }
