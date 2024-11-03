@@ -11,3 +11,9 @@ vim.o.shada = "!,'1000,<100,s50,h"
 vim.o.clipboard = ""
 -- disable LSP log to avoid infinitely growing log file
 vim.lsp.set_log_level("off")
+
+-- vim folding
+-- ref: https://www.reddit.com/r/neovim/comments/1gi7ush/treesitter_is_amazing/
+vim.o.foldmethod = "expr"
+vim.o.foldexpr = "nvim_treesitter#foldexpr()"
+vim.o.foldlevelstart = 99
