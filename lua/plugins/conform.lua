@@ -8,7 +8,7 @@ return {
     },
     formatters_by_ft = {
       hcl = { "hcl" },
-      go = { "gofumpt" },
+      -- go = { "gofumpt" },
       sh = { "shfmt_i" },
       -- Conform will run multiple formatters sequentially
       python = { "isort", "black" },

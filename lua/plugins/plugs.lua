@@ -1,5 +1,5 @@
 return {
-  { "towolf/vim-helm", lazy = true, ft = "yaml" },
+  -- { "towolf/vim-helm", lazy = true, ft = "yaml" },
   {
     "tummetott/unimpaired.nvim",
     event = "VeryLazy",
