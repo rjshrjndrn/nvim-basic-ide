@@ -26,7 +26,7 @@ return {
   end,
   keys = {
     { "<leader>gs", ":Neogit<CR>", desc = "Git Status", silent = true },
-    { "<leader>gc", ":Neogit commit<CR>", desc = "Git Push", silent = true },
+    { "<leader>gc", ":Neogit commit<CR>", desc = "Git Commit", silent = true },
     { "<leader>gp", ":Neogit pull<CR>", desc = "Git Pull", silent = true },
     { "<leader>gP", ":Neogit push<CR>", desc = "Git Push", silent = true },
   },
