@@ -13,7 +13,7 @@ return {
     require("neogit").setup({
       kind = "split", -- Set to "split" or "floating"
       integrations = {
-        diffview = false, -- Enable if using diffview.nvim
+        diffview = true, -- Enable if using diffview.nvim
       },
       disable_commit_confirmation = true,
       -- Custom floating window configuration
@@ -26,6 +26,7 @@ return {
   end,
   keys = {
     { "<leader>gs", ":Neogit<CR>", desc = "Git Status", silent = true },
+    { "<leader>gc", ":Neogit commit<CR>", desc = "Git Push", silent = true },
     { "<leader>gp", ":Neogit pull<CR>", desc = "Git Pull", silent = true },
     { "<leader>gP", ":Neogit push<CR>", desc = "Git Push", silent = true },
   },

@@ -2,6 +2,7 @@ return {
   "ibhagwan/fzf-lua",
   keys = {
     { "<leader>gs", false },
+    { "<leader>gc", false },
     --   { "//", LazyVim.pick("grep_cword"), desc = "Word (Root Dir)" },
     --   { "//", LazyVim.pick("grep_visual"), mode = "v", desc = "Selection (Root Dir)" },
     --   { "??", LazyVim.pick("grep_cword", { root = false }), desc = "Word (CW Dir)" },
