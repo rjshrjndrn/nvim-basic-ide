@@ -2,3 +2,4 @@
 require("config.lazy")
 require("custom.scrap")
 require("custom.saveImage")
+require("custom.genPassword")
