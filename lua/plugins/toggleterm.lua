@@ -12,7 +12,7 @@ function M.config()
 
   toggleterm.setup({
     size = 20,
-    open_mapping = [[<a-.>]],
+    open_mapping = [[<leader>.]],
     hide_numbers = true,
     shade_terminals = true,
     shading_factor = 2,
