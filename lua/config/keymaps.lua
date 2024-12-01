@@ -7,7 +7,7 @@ local keymap = vim.keymap.set
 local opts = { silent = true }
 
 -- Better paste
-keymap("v", "p", '"_dP', opts)
+keymap("x", "p", '"_dP', opts)
 -- keymap("n", "<leader>y", '"+y', opts)
 keymap("n", "<leader>yy", 'V"+y', opts)
 keymap("n", "<leader>Y", '"+y$', opts)
