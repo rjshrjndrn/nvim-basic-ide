@@ -8,7 +8,7 @@ return {
     --   { "??", LazyVim.pick("grep_cword", { root = false }), desc = "Word (CW Dir)" },
     --   { "??", LazyVim.pick("grep_visual", { root = false }), mode = "v", desc = "Selection (CW Dir)" },
   },
-  opts = function(_, opts)
+  opts = function()
     local config = require("fzf-lua.config")
     local actions = require("fzf-lua.actions")
     --   -- Refer: https://github.com/ibhagwan/fzf-lua/blob/main/lua/fzf-lua/defaults.lua

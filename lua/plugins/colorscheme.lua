@@ -13,7 +13,7 @@ local colorscheme = {
   {
     "LazyVim/LazyVim",
     opts = {
-      colorscheme = "duskfox",
+      colorscheme = "terafox",
     },
   },
 }

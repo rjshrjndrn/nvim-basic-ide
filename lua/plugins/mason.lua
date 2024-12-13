@@ -5,5 +5,6 @@ return {
     "shfmt",
     "helm_ls",
     "hcl",
+    "gopls",
   },
 }

@@ -17,3 +17,7 @@ vim.lsp.set_log_level("off")
 vim.o.foldmethod = "expr"
 vim.o.foldexpr = "nvim_treesitter#foldexpr()"
 vim.o.foldlevelstart = 99
+
+-- for now blink is not working well with codeium
+-- ref: https://github.com/LazyVim/LazyVim/discussions/5036#discussioncomment-11560995
+vim.g.lazyvim_cmp = "nvim-cmp"
