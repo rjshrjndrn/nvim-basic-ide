@@ -24,17 +24,10 @@ return {
           },
         },
       },
-      helm_ls = {
-        -- filetypes = { "helm" },
-        -- root_dir = require("lspconfig").util.root_pattern("Chart.yaml"),
-      },
+
       yamlls = {
         filetypes = { "yml", "yaml" },
         -- lazy-load schemastore when needed
-        on_new_config = function(new_config)
-          new_config.settings.yaml.schemas =
-            vim.tbl_deep_extend("force", new_config.settings.yaml.schemas or {}, require("schemastore").yaml.schemas())
-        end,
         settings = {
           redhat = { telemetry = { enabled = false } },
           yaml = {
@@ -50,22 +43,12 @@ return {
               -- Avoid TypeError: Cannot read properties of undefined (reading 'length')
               url = "",
             },
-            schemas = {
-              -- ref: https://github.com/steeef/dotfiles/pull/5/files
-              -- TODO: load based on kind:
-              ["https://raw.githubusercontent.com/datreeio/CRDs-catalog/main/argoproj.io/application_v1alpha1.json"] = "*argo/*application/*.yaml",
-              ["https://raw.githubusercontent.com/datreeio/CRDs-catalog/main/argoproj.io/applicationset_v1alpha1.json"] = "*argo/*appset/*.yaml",
-              ["https://raw.githubusercontent.com/datreeio/CRDs-catalog/main/argoproj.io/appproject_v1alpha1.json"] = "*project/*.yaml",
-            },
           },
         },
       },
       bashls = {
         filetypes = { "sh", "bash" },
       },
-      tflint = {},
-      pyright = {},
-      jsonls = {},
       ansiblels = {
         filetypes = { "yaml.ansible" },
       },
