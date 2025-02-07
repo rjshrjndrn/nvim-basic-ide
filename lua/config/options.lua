@@ -6,8 +6,28 @@ vim.opt.timeoutlen = 1000
 vim.opt.updatetime = 100 -- faster completion (4000ms default)
 vim.opt.ttimeoutlen = 0
 vim.opt.relativenumber = false
-vim.opt.diffopt:append("vertical")
-vim.o.shada = "!,'1000,<100,s50,h"
+-- vim.opt.diffopt:append("vertical")
+-- vim.o.shada = "!,'1000,<100,s50,h"
+
+-- Improved version:
+-- Make diff mode more readable with vertical splits and better algorithms
+vim.opt.diffopt:append({
+  "vertical", -- Split diffs vertically
+  "algorithm:patience", -- Use patience diff algorithm
+  "iwhite", -- Ignore whitespace changes
+  "hiddenoff", -- Don't diff hidden buffers
+})
+
+-- ShaDa (shared data) settings with explanatory breakdown
+vim.o.shada = table.concat({
+  "!", -- Save global variables
+  "'1000", -- Save marks for 1000 files
+  "<100", -- Save register items up to 100 lines each
+  "s50", -- Limit size of items in KB
+  "h", -- Disable 'hlsearch' when loading
+  "%", -- Save and restore buffer list
+}, ",")
+
 vim.o.clipboard = ""
 -- disable LSP log to avoid infinitely growing log file
 vim.lsp.set_log_level("off")
