@@ -25,4 +25,4 @@ end
 vim.api.nvim_create_user_command("SaveClipboardImage", save_image, {})
 
 -- Map <leader>p to the command
-vim.api.nvim_set_keymap("n", "<leader>p", ":SaveClipboardImage<CR>", { noremap = true, silent = true })
+-- vim.api.nvim_set_keymap("n", "<leader>p", ":SaveClipboardImage<CR>", { noremap = true, silent = true })

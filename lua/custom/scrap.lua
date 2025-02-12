@@ -82,7 +82,7 @@ end
 vim.api.nvim_create_user_command("Scrap", scrap, {})
 
 -- Set the keymap for normal mode to trigger the scrap function
-vim.api.nvim_set_keymap("n", "<leader>;", ":Scrap<CR>", { noremap = true, silent = true })
+-- vim.api.nvim_set_keymap("n", "<leader>;", ":Scrap<CR>", { noremap = true, silent = true })
 
 return {
   scrap = scrap,
