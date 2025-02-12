@@ -26,7 +26,15 @@ return {
       },
     }
 
+    opts.files = {
+      actions = {
+        ["ctrl-i"] = nil,
+        ["ctrl-h"] = nil,
+      },
+    }
+
     config.defaults.actions.files["ctrl-t"] = actions.file_tabedit
+    config.defaults.actions.files["ctrl-i"] = actions.toggle_ignore
     config.defaults.keymap.builtin["<c-w>"] = "toggle-preview-wrap"
     config.defaults.keymap.builtin["<c-p>"] = "toggle-preview"
     config.defaults.keymap.builtin["<c-o>"] = "toggle-help"
