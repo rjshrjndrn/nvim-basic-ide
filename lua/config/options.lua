@@ -25,7 +25,7 @@ vim.o.shada = table.concat({
   "<100", -- Save register items up to 100 lines each
   "s50", -- Limit size of items in KB
   "h", -- Disable 'hlsearch' when loading
-  "%", -- Save and restore buffer list
+  -- "%", -- Save and restore buffer list
 }, ",")
 
 vim.o.clipboard = ""
