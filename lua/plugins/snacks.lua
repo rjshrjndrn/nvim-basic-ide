@@ -1,5 +1,5 @@
 return {
-  "folke/snacks.nvim",
+  "rjshrjndrn/snacks.nvim",
   opts = function(_, opts)
     opts.dashboard = { enabled = false }
     opts.scratch = {
@@ -8,6 +8,16 @@ return {
       name = "Scratch",
     }
     local t_picker = {}
+    local preview_window_opts = {
+      input = {
+        keys = {
+          ["gb"] = {
+            "git_browse",
+            mode = { "n" },
+          },
+        },
+      },
+    }
     if LazyVim.has("trouble.nvim") then
       t_picker = {
         actions = {
@@ -28,16 +38,10 @@ return {
       picker = {
         sources = {
           git_log = {
-            win = {
-              input = {
-                keys = {
-                  ["gb"] = {
-                    "git_browse",
-                    mode = { "n" },
-                  },
-                },
-              },
-            },
+            win = preview_window_opts,
+          },
+          git_log_line = {
+            win = preview_window_opts,
           },
         },
         actions = {
