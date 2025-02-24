@@ -43,14 +43,15 @@ return {
           git_log_line = {
             win = preview_window_opts,
           },
+          git_log_file = {
+            win = preview_window_opts,
+          },
         },
         actions = {
           git_browse = function(picker, item)
-            -- return Snacks.gitbrowse()
             -- picker:close()
             -- vim.notify(vim.inspect(item), vim.log.levels.INFO)
-            -- return Snacks.gitbrowse()
-            gitbrowse.open({ what = "commit", commit = item.commit })
+            return gitbrowse.open({ what = "commit", commit = item.commit })
           end,
         },
         win = {
