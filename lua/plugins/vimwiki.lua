@@ -1,5 +1,11 @@
 local M = {
-  { "vimwiki/vimwiki", cmd = "VimwikiIndex" }, --, event = "VeryLazy" },
+  {
+    "vimwiki/vimwiki",
+    cmd = "VimwikiIndex",
+    keys = {
+      { "<leader>ww", "<cmd>VimwikiIndex<cr>", desc = "Open VimWiki index" },
+    },
+  },
 }
 
 vim.g.vimwiki_markdown_link_ext = 1
