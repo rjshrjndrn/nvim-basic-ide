@@ -45,3 +45,4 @@ vim.o.foldlevelstart = 99
 -- Animation
 -- vim.g.snacks_animate = false
 vim.g.snacks_animate_scroll = false
+vim.treesitter.language.register("markdown", "vimwiki")
