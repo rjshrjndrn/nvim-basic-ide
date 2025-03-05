@@ -4,6 +4,7 @@ local M = {
     cmd = "VimwikiIndex",
     keys = {
       { "<leader>ww", "<cmd>VimwikiIndex<cr>", desc = "Open VimWiki index" },
+      { "<leader>wi", "<cmd>VimwikiDiaryIndex<cr>", desc = "Open VimWiki index" },
     },
   },
 }
