@@ -7,6 +7,18 @@ return {
       cmd = "Scratch",
       name = "Scratch",
     }
+    opts = {
+      picker = {
+        sources = {
+          recent = {
+            filter = {
+              -- disable filtering by default
+              paths = false,
+            },
+          },
+        },
+      },
+    }
     local t_picker = {}
     local preview_window_opts = {
       input = {
