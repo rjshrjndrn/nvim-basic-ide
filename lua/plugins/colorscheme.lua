@@ -15,7 +15,7 @@ local colorscheme = {
   {
     "LazyVim/LazyVim",
     opts = {
-      colorscheme = "duskfox",
+      colorscheme = "nightfox",
     },
   },
 }
