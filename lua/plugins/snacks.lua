@@ -7,18 +7,6 @@ return {
       cmd = "Scratch",
       name = "Scratch",
     }
-    opts = {
-      picker = {
-        sources = {
-          recent = {
-            filter = {
-              -- disable filtering by default
-              paths = false,
-            },
-          },
-        },
-      },
-    }
     local t_picker = {}
     local preview_window_opts = {
       input = {
@@ -70,6 +58,12 @@ return {
           },
           git_log_file = {
             win = preview_window_opts,
+          },
+          recent = {
+            filter = {
+              -- disable filtering by default
+              paths = false,
+            },
           },
         },
         actions = {
