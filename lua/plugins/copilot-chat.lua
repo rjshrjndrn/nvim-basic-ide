@@ -5,5 +5,11 @@ return {
     prompts = {
       Explain = "Write an comprehensive explanation for the selected code.",
     },
+    mappings = {
+      reset = {
+        normal = "<C-r>",
+        insert = "<C-r>",
+      },
+    },
   },
 }
