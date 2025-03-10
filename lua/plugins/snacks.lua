@@ -46,6 +46,10 @@ return {
         -- show files ignored by git like node_modules
         ignored = true,
         sources = {
+          project = {
+            -- show complete path
+            show_full_path = true,
+          },
           files = {
             ignored = true,
             hidden = true,
