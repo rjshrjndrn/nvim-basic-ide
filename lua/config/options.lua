@@ -46,3 +46,11 @@ vim.o.foldlevelstart = 99
 -- vim.g.snacks_animate = false
 vim.g.snacks_animate_scroll = false
 vim.treesitter.language.register("markdown", "vimwiki")
+
+-- Set fold level for HTTP files
+vim.api.nvim_create_autocmd("FileType", {
+  pattern = "http",
+  callback = function()
+    vim.opt_local.foldlevel = 1
+  end,
+})
