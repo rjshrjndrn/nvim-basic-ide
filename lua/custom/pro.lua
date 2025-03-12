@@ -1,6 +1,7 @@
 -- References:
 -- snacks.nvim picker : https://github.com/folke/snacks.nvim
 -- project.nvim : https://github.com/ahmedkhalf/project.nvim/tree/main
+-- reddit: https://www.reddit.com/r/neovim/comments/1i8yy4j/create_a_new_source_directories_for_snackspicker/
 local project_nvim = require("project_nvim")
 local snacks = require("snacks")
 
@@ -20,40 +21,12 @@ local function get_projects()
   return project_list
 end
 
--- local function custom_picker()
---   local projects = get_projects()
---   vim.notify("Total Projects: " .. #projects)
---   snacks.picker.pick({
---     source = "projects",
---     prompt = "Projects> ",
---     items = projects,
---     action = function(item)
---       vim.cmd("cd " .. item.value)
---     end,
---   })
--- end
--- Create a custom picker source
 local function custom_picker()
   local projects = get_projects()
-  local picker = snacks.picker.pick({
-    source = "projects",
-    finder = function()
-      return projects
-    end,
-    prompt = "Projects> ",
-    format = function(item)
-      return {
-        value = item.value,
-        display = item.label,
-        field = item.file,
-      }
-    end,
-    action = function(item)
-      -- Logic to switch to the selected project directory
-      vim.cmd("cd " .. item.value)
-    end,
+  vim.notify("Total Projects: " .. #projects)
+  snacks.picker.projects({
+    projects = projects,
   })
-  return picker
 end
 
 -- Keymap to invoke the custom project picker
