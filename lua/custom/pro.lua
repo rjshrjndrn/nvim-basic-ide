@@ -20,24 +20,41 @@ local function get_projects()
   return project_list
 end
 
+-- local function custom_picker()
+--   local projects = get_projects()
+--   vim.notify("Total Projects: " .. #projects)
+--   snacks.picker.pick({
+--     source = "projects",
+--     prompt = "Projects> ",
+--     items = projects,
+--     action = function(item)
+--       vim.cmd("cd " .. item.value)
+--     end,
+--   })
+-- end
 -- Create a custom picker source
-local function project_picker(opts)
+local function custom_picker()
   local projects = get_projects()
-  -- Fix the picker call according to snacks.nvim API
-  snacks.picker({
-    items = projects,
-    prompt = "Projects",
-    live = true,
-    -- query = opts and opts.query or "",
-    -- on_select = function(item)
-    --   if item and type(item.value) == "string" then
-    --     vim.cmd("cd " .. item.value)
-    --   end
-    -- end,
-  }, opts)
+  local picker = snacks.picker.pick({
+    source = "projects",
+    finder = function()
+      return projects
+    end,
+    prompt = "Projects> ",
+    format = function(item)
+      return {
+        value = item.value,
+        display = item.label,
+        field = item.file,
+      }
+    end,
+    action = function(item)
+      -- Logic to switch to the selected project directory
+      vim.cmd("cd " .. item.value)
+    end,
+  })
+  return picker
 end
 
 -- Keymap to invoke the custom project picker
-vim.keymap.set("n", "<leader>sp", function()
-  project_picker()
-end, { desc = "Show All Projects" })
+vim.keymap.set("n", "<leader>sp", custom_picker, { desc = "Show All Projects" })
