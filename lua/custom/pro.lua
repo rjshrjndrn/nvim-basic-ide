@@ -1,3 +1,6 @@
+-- References:
+-- snacks.nvim picker : https://github.com/folke/snacks.nvim
+-- project.nvim : https://github.com/ahmedkhalf/project.nvim/tree/main
 local project_nvim = require("project_nvim")
 local snacks = require("snacks")
 
@@ -23,28 +26,14 @@ local function project_picker(opts)
   -- Fix the picker call according to snacks.nvim API
   snacks.picker({
     items = projects,
-    prompt = "",
-    format_item = function(item)
-      if not item or not item.label then
-        return ""
-      end
-      return item.label
-    end,
-    preview_item = function(item)
-      if not item or not item.value then
-        return ""
-      end
-      return "Project Path: " .. item.value
-    end,
-    on_select = function(item)
-      if not item or not item.value then
-        return
-      end
-      -- Logic to switch to the selected project directory
-      vim.cmd("cd " .. item.value)
-    end,
-    live_search = true,
-    query = "",
+    prompt = "Projects",
+    live = true,
+    -- query = opts and opts.query or "",
+    -- on_select = function(item)
+    --   if item and type(item.value) == "string" then
+    --     vim.cmd("cd " .. item.value)
+    --   end
+    -- end,
   }, opts)
 end
 
