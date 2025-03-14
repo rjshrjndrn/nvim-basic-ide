@@ -54,3 +54,7 @@ vim.api.nvim_create_autocmd("FileType", {
     vim.opt_local.foldlevel = 1
   end,
 })
+
+-- CopilotChat
+-- For best autocompletion experience, also add popup to your completeopt (even on Neovim 0.11.0+).
+vim.opt.completeopt:append({ "noinsert", "popup" })
