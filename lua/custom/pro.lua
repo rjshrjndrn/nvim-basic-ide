@@ -25,9 +25,10 @@ local function custom_picker()
   local projects = get_projects()
   vim.notify("Total Projects: " .. #projects)
   snacks.picker.projects({
-    projects = projects,
+    projects = project_nvim.get_recent_projects(),
+    confirm = "picker_files",
   })
 end
 
 -- Keymap to invoke the custom project picker
-vim.keymap.set("n", "<leader>sp", custom_picker, { desc = "Show All Projects" })
+vim.keymap.set("n", "<leader>fp", custom_picker, { desc = "Show All Projects" })
