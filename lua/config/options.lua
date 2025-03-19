@@ -36,7 +36,7 @@ vim.lsp.set_log_level("off")
 -- ref: https://www.reddit.com/r/neovim/comments/1gi7ush/treesitter_is_amazing/
 vim.o.foldmethod = "expr"
 vim.o.foldexpr = "nvim_treesitter#foldexpr()"
-vim.o.foldlevelstart = 99
+vim.o.foldlevelstart = 5
 
 -- for now blink is not working well with codeium
 -- ref: https://github.com/LnvimazyVim/LazyVim/discussions/5036#discussioncomment-11560995
@@ -63,3 +63,14 @@ vim.opt.completeopt:append({ "noinsert", "popup" })
 -- Ref: https://github.com/neovide/neovide/blob/a2de54f842bdf7c45f62e578780c12908f6f1e6c/website/docs/configuration.md?plain=1#L835
 vim.g.neovide_cursor_animation_length = 0.05
 vim.g.neovide_cursor_trail_size = 0.05
+vim.opt.linespace = 5
+vim.g.neovide_scale_factor = 1.0
+local change_scale_factor = function(delta)
+  vim.g.neovide_scale_factor = vim.g.neovide_scale_factor * delta
+end
+vim.keymap.set("n", "<C-=>", function()
+  change_scale_factor(1.25)
+end)
+vim.keymap.set("n", "<C-->", function()
+  change_scale_factor(1 / 1.25)
+end)
