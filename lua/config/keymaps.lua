@@ -66,3 +66,8 @@ end
 
 -- Map the custom function to a keybinding
 vim.api.nvim_set_keymap("n", "<leader>gr", ":lua Goto_role()<CR>", { noremap = true, silent = true })
+
+if vim.g.neovide then
+  vim.notify("Neovide detected, setting keymaps")
+  keymap("i", "<D-v>", "<C-r>+", opts)
+end
