@@ -18,6 +18,12 @@ keymap("n", "<leader>yap", '"+yap', opts)
 keymap("v", "Y", '"+y', opts)
 keymap("n", "<C-Y>", 'magg0"+yG`a:delmarks a<CR>', opts)
 
+-- Better tab
+keymap("n", "<leader>tn", ":tabnext<CR>", opts)
+keymap("n", "<leader>tp", ":tabprevious<CR>", opts)
+keymap("n", "<leader>tl", ":tablast<CR>", opts)
+keymap("n", "<leader>tf", ":tabfirst<CR>", opts)
+
 -- Visual --
 -- Stay in indent mode
 keymap("v", "<", "<gv", opts)
