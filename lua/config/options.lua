@@ -58,3 +58,8 @@ vim.api.nvim_create_autocmd("FileType", {
 -- CopilotChat
 -- For best autocompletion experience, also add popup to your completeopt (even on Neovim 0.11.0+).
 vim.opt.completeopt:append({ "noinsert", "popup" })
+
+-- neovide options
+-- Ref: https://github.com/neovide/neovide/blob/a2de54f842bdf7c45f62e578780c12908f6f1e6c/website/docs/configuration.md?plain=1#L835
+vim.g.neovide_cursor_animation_length = 0.05
+vim.g.neovide_cursor_trail_size = 0.05

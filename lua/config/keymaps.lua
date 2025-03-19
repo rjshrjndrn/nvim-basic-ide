@@ -11,6 +11,8 @@ keymap("x", "p", '"_dP', opts)
 -- keymap("n", "<leader>y", '"+y', opts)
 keymap("n", "<leader>yy", 'V"+y', opts)
 keymap("n", "<leader>Y", '"+y$', opts)
+keymap("n", "<leader>P", '"+P', opts)
+keymap("n", "<leader>p", '"+p', opts)
 keymap("n", "<leader>yip", '"+yip', opts)
 keymap("n", "<leader>yap", '"+yap', opts)
 keymap("v", "Y", '"+y', opts)
@@ -68,6 +70,5 @@ end
 vim.api.nvim_set_keymap("n", "<leader>gr", ":lua Goto_role()<CR>", { noremap = true, silent = true })
 
 if vim.g.neovide then
-  vim.notify("Neovide detected, setting keymaps")
-  keymap("i", "<D-v>", "<C-r>+", opts)
+  vim.keymap.set("i", "<D-v>", "+", { silent = true })
 end
