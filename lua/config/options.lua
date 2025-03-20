@@ -76,6 +76,7 @@ vim.keymap.set("n", "<C-->", function()
 end)
 
 -- Set transparency and background color (title bar color)
-vim.g.neovide_transparency = 0.2
+vim.g.neovide_transparency = 0.88
 vim.g.neovide_window_blurred = true
+vim.g.neovide_fullscreen = true
 vim.o.guifont = "JetBrainsMono Nerd Font:h14" -- text below applies for VimScript
