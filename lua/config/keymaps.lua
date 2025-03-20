@@ -77,8 +77,12 @@ vim.api.nvim_set_keymap("n", "<leader>gr", ":lua Goto_role()<CR>", { noremap = t
 
 if vim.g.neovide then
   -- Smart paste for GUI clients
-  vim.keymap.set({ "i" }, "<D-v>", function()
+  local function paster()
     -- Regular mapping doesn't seem to preserve indentation, so we use the API directly
     vim.api.nvim_paste(vim.fn.getreg("+"), true, -1) -- Use system clipboard
-  end, { desc = "Neovide smart paste" })
+  end
+  -- mac
+  vim.keymap.set({ "i" }, "<D-v>", paster, { desc = "Neovide smart paste" })
+  -- linux/windows
+  vim.keymap.set({ "i" }, "<C-S-V>", paster, { desc = "Neovide smart paste" })
 end

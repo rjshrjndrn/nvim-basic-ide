@@ -59,24 +59,26 @@ vim.api.nvim_create_autocmd("FileType", {
 -- For best autocompletion experience, also add popup to your completeopt (even on Neovim 0.11.0+).
 vim.opt.completeopt:append({ "noinsert", "popup" })
 
--- neovide options
--- Ref: https://github.com/neovide/neovide/blob/a2de54f842bdf7c45f62e578780c12908f6f1e6c/website/docs/configuration.md?plain=1#L835
-vim.g.neovide_cursor_animation_length = 0.05
-vim.g.neovide_cursor_trail_size = 0.05
-vim.opt.linespace = 5
-vim.g.neovide_scale_factor = 1.0
-local change_scale_factor = function(delta)
-  vim.g.neovide_scale_factor = vim.g.neovide_scale_factor * delta
-end
-vim.keymap.set("n", "<C-=>", function()
-  change_scale_factor(1.25)
-end)
-vim.keymap.set("n", "<C-->", function()
-  change_scale_factor(1 / 1.25)
-end)
+if vim.g.neovide then
+  -- neovide options
+  -- Ref: https://github.com/neovide/neovide/blob/a2de54f842bdf7c45f62e578780c12908f6f1e6c/website/docs/configuration.md?plain=1#L835
+  vim.g.neovide_cursor_animation_length = 0.05
+  vim.g.neovide_cursor_trail_size = 0.05
+  vim.opt.linespace = 5
+  vim.g.neovide_scale_factor = 1.0
+  local change_scale_factor = function(delta)
+    vim.g.neovide_scale_factor = vim.g.neovide_scale_factor * delta
+  end
+  vim.keymap.set("n", "<C-=>", function()
+    change_scale_factor(1.25)
+  end)
+  vim.keymap.set("n", "<C-->", function()
+    change_scale_factor(1 / 1.25)
+  end)
 
--- Set transparency and background color (title bar color)
-vim.g.neovide_transparency = 0.88
-vim.g.neovide_window_blurred = true
-vim.g.neovide_fullscreen = true
-vim.o.guifont = "JetBrainsMono Nerd Font:h14" -- text below applies for VimScript
+  -- Set transparency and background color (title bar color)
+  vim.g.neovide_transparency = 0.88
+  vim.g.neovide_window_blurred = true
+  vim.g.neovide_fullscreen = true
+  vim.o.guifont = "JetBrainsMono Nerd Font:h14" -- text below applies for VimScript
+end
