@@ -76,9 +76,9 @@ end
 vim.api.nvim_set_keymap("n", "<leader>gr", ":lua Goto_role()<CR>", { noremap = true, silent = true })
 
 if vim.g.neovide then
-  -- Allow clipboard copy paste in neovide
-  vim.api.nvim_set_keymap("", "<D-v>", "+p<CR>", { noremap = true, silent = true })
-  vim.api.nvim_set_keymap("!", "<D-v>", "<C-R>+", { noremap = true, silent = true })
-  vim.api.nvim_set_keymap("t", "<D-v>", '<C-\\><C-o>"+p', { noremap = true, silent = true })
-  vim.api.nvim_set_keymap("v", "<D-v>", "<C-R>+", { noremap = true, silent = true })
+  -- Smart paste for GUI clients
+  vim.keymap.set({ "i" }, "<D-v>", function()
+    -- Regular mapping doesn't seem to preserve indentation, so we use the API directly
+    vim.api.nvim_paste(vim.fn.getreg("+"), true, -1) -- Use system clipboard
+  end, { desc = "Neovide smart paste" })
 end
