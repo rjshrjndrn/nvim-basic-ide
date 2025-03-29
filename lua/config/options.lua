@@ -36,7 +36,7 @@ vim.lsp.set_log_level("off")
 -- ref: https://www.reddit.com/r/neovim/comments/1gi7ush/treesitter_is_amazing/
 vim.o.foldmethod = "expr"
 vim.o.foldexpr = "nvim_treesitter#foldexpr()"
-vim.o.foldlevelstart = 5
+vim.o.foldlevelstart = 99
 
 -- for now blink is not working well with codeium
 -- ref: https://github.com/LnvimazyVim/LazyVim/discussions/5036#discussioncomment-11560995
@@ -59,6 +59,7 @@ vim.api.nvim_create_autocmd("FileType", {
 -- For best autocompletion experience, also add popup to your completeopt (even on Neovim 0.11.0+).
 vim.opt.completeopt:append({ "noinsert", "popup" })
 
+<<<<<<< Updated upstream
 if vim.g.neovide then
   -- neovide options
   -- Ref: https://github.com/neovide/neovide/blob/a2de54f842bdf7c45f62e578780c12908f6f1e6c/website/docs/configuration.md?plain=1#L835
@@ -75,10 +76,13 @@ if vim.g.neovide then
   vim.keymap.set("n", "<C-->", function()
     change_scale_factor(1 / 1.25)
   end)
-
   -- Set transparency and background color (title bar color)
   vim.g.neovide_transparency = 0.88
   vim.g.neovide_window_blurred = true
   vim.g.neovide_fullscreen = true
   vim.o.guifont = "JetBrainsMono Nerd Font:h14" -- text below applies for VimScript
 end
+-- Set transparency and background color (title bar color)
+vim.g.neovide_transparency = 0.8
+vim.g.neovide_window_blurred = true
+vim.o.guifont = "JetBrainsMono Nerd Font:h14" -- text below applies for VimScript
