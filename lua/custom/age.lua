@@ -23,12 +23,13 @@ function M.encrypt_buffer()
 end
 
 function M.decrypt_buffer()
-  -- Get the current buffer's file path
-  local filepath = vim.fn.expand("%")
+  -- Get current buffer content
+  local lines = vim.api.nvim_buf_get_lines(0, 0, -1, false)
+  local content = table.concat(lines, "\n")
 
   -- Run age decryption command on the file
-  local cmd = string.format("age -d -i %s %s", vim.fn.expand(M.config.private_key_path), vim.fn.shellescape(filepath))
-  local output = vim.fn.system(cmd)
+  local cmd = string.format("age -d -i %s", vim.fn.expand(M.config.private_key_path))
+  local output = vim.fn.system(cmd, content)
 
   if vim.v.shell_error ~= 0 then
     vim.notify("Decryption failed: " .. output, vim.log.levels.ERROR)
