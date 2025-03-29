@@ -17,6 +17,8 @@ function M.encrypt_buffer()
 
   -- Replace buffer content with encrypted data
   vim.api.nvim_buf_set_lines(0, 0, -1, false, vim.split(encrypted, "\n"))
+  -- Set file type as age
+  vim.bo.filetype = "age"
   vim.notify("Buffer encrypted with age", vim.log.levels.INFO)
 end
 
