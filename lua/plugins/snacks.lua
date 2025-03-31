@@ -1,5 +1,5 @@
 return {
-  "rjshrjndrn/snacks.nvim",
+  "folke/snacks.nvim",
   opts = function(_, opts)
     opts.dashboard = { enabled = false }
     opts.scratch = {
