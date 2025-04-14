@@ -5,6 +5,10 @@ return {
     prompts = {
       Explain = "Write an comprehensive explanation for the selected code.",
     },
+    sticky = {
+      "#filenames",
+      "#buffer",
+    },
     mappings = {
       reset = {
         normal = "<C-r>",
