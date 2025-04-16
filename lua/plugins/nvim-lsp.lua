@@ -1,6 +1,11 @@
 return {
   "neovim/nvim-lspconfig",
   opts = {
+    diagnostics = {
+      virtual_text = {
+        current_line = true,
+      },
+    },
     -- options for vim.diagnostic.config()
     -- LSP Server Settings
     ---@type lspconfig.options
@@ -77,13 +82,13 @@ return {
         filetypes = { "yaml.ansible" },
       },
     },
-    setup = {
-      yamlls = function(server, opts)
-        opts.on_attach = function(client, bufnr)
-          vim.diagnostic.config({ virtual_text = false, signs = false }, bufnr)
-        end
-        require("lspconfig")[server].setup(opts)
-      end,
-    },
+    -- setup = {
+    --   yamlls = function(server, opts)
+    --     opts.on_attach = function(client, bufnr)
+    --       vim.diagnostic.config({ virtual_text = false, signs = false }, bufnr)
+    --     end
+    --     require("lspconfig")[server].setup(opts)
+    --   end,
+    -- },
   },
 }
