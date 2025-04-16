@@ -8,6 +8,7 @@ vim.opt.ttimeoutlen = 0
 vim.opt.relativenumber = false
 -- vim.opt.diffopt:append("vertical")
 -- vim.o.shada = "!,'1000,<100,s50,h"
+vim.diagnostic.config({ virtual_text = { current_line = true } })
 
 -- Improved version:
 -- Make diff mode more readable with vertical splits and better algorithms
